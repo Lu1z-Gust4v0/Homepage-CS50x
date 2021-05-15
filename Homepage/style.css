@@ -1,0 +1,307 @@
+/* Css variables */
+
+/* Normal Theme */
+
+body {
+    --sky-color: linear-gradient(blue 10%, skyblue, lightskyblue, lightblue);
+    --nav-color: blue;
+    --sun-color: yellow;
+    --sun-box-shadow: none;
+    --star-color: transparent;
+    --star-animation: initial;
+    background: var(--sky-color);
+    background-repeat: repeat-x;
+}
+
+/* Dark Theme */
+
+body.night-theme {
+    --sky-color: linear-gradient(black 10%, darkblue, blue, rgb(40, 53, 235), lightskyblue);
+    --nav-color: black;
+    --sun-color: transparent;
+    --sun-box-shadow: 25px 10px 0px 0px white;
+    --star-color: white;
+    --star-animation: infinite;
+    background: var(--sky-color);
+    background-repeat: repeat-x;
+}
+
+/* Tags*/
+
+h1{
+    margin: 0;
+    padding: 20px 30px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+}
+h2, h3 {
+    margin: 15px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: white;
+}
+p {
+    margin: 0px 0px 0px 10px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: whitesmoke;
+}
+p.final {
+    margin-bottom: 5%;
+}
+
+/* Navigation Bar */
+
+ul.navigation {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: var(--nav-color);
+    list-style-type: none;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+li a.nav-link {
+    display: block;
+    text-decoration: none;
+    margin: 5px;
+    padding: 16px 16px;
+    font-size: 1.25em;
+    font-family: sans-serif;
+    color: white
+}
+li a.active{
+    background-color: darkblue;
+}
+a.nav-link:hover:not(.active){
+    background-color: lightskyblue;
+}
+
+/* Learn More */
+
+.learn-more {
+    background-color: transparent;
+    margin-left: 15%;
+    border-radius: 7px;
+    border: 1px solid white;
+    padding: 12px 18px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+}
+.learn-more:hover {
+    cursor: pointer;
+    background: rgb(76, 218, 253);
+    box-shadow: 1px 1px 5px white;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+/* bootstrap */
+
+.boot-span:hover {
+    cursor: pointer;
+    background-color: rgb(15, 255, 15);
+    box-shadow: 1px 1px 5px white;
+}
+
+/* List */
+
+ul.list {
+    margin-top: 15px;
+    list-style-type: disc;
+    color: white;
+}
+
+ul.list li {
+    margin-bottom: 10px;
+}
+
+a.list-item {
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.25em;
+    font-family: sans-serif;
+    color: white
+}
+
+/* Sky */
+
+#sky {
+    background: var(--sky-color);
+    width: 100%;
+    height: 1000px;
+}
+#sky.extended{
+    width: 100%;
+    height: auto;
+}
+
+.layer-2, .layer-3, .layer-4{
+    height: 50px;
+}
+.sun{
+    background-color: var(--sun-color);
+    margin-left: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: var(--sun-box-shadow);
+    border-radius: 50%;
+}
+.stars{
+    background-color: var(--star-color);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    animation-iteration-count: var(--star-animation);
+}
+.star-1{
+    margin-left: calc(25% + 5 * var(--n));
+    animation-name: twinkle;
+    animation-duration: 0.8s;
+}
+.star-2{
+    margin-left: calc(50% + 5 * var(--n));
+    animation-name: twinkle;
+    animation-duration: 1s;
+}
+.star-3{
+    margin-left: calc(75% + 5 * var(--n));
+    animation-name: twinkle;
+    animation-duration: 1.2s;
+}
+
+/* Animation */
+
+@keyframes twinkle {
+    50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+    }
+}
+
+/* Images */
+
+.container-1{
+    display: flex;
+    justify-content: center;
+}
+.container-2{
+    display: flex;
+    justify-content: space-around;
+}
+img {
+    border-radius: 10px;
+    margin: 10px;
+}
+img.icon {
+    background-color: white;
+}
+img:hover {
+    box-shadow: 2px 2px 6px white;
+}
+
+/* Media queries */
+
+@media all and (max-width: 1250px)
+{
+    .container-1 {
+        flex-flow: column wrap;
+        align-content: center;
+    }
+}
+@media all and (max-width: 900px) {
+    .container-2 {
+        flex-flow: column wrap;
+        align-content: center;
+    }
+}
+@media all and (max-width: 800px)
+{
+    ul.navigation {
+        justify-content: space-around;
+    }
+    li a.nav-link{
+        text-align: center;
+    }
+    .gustavo {
+        width: 400px;
+        height: 534px;
+    }
+    .br-flag {
+        width: 300px;
+        height: 210px;
+    }
+    .fortaleza {
+        width: 450px;
+        height: 245px;
+    }
+    .nintendo {
+        width: 400px;
+        height: 412px;
+    }
+    .pokemon{
+        width: 500px;
+        height: 333px;
+    }
+    .anime-1{
+        width: 400px;
+        height: 587px;
+    }
+    .anime-2{
+        width: 400px;
+        height: 571px;
+    }
+}
+@media all and (max-width: 600px){
+    ul.navigation {
+        flex-flow: column wrap;    
+    }
+    li a.nav-link{
+        padding: 10px;
+        border-top: 1px solid white;
+        text-align: center;
+    }
+    .gustavo {
+        width: 290px;
+        height: 387px;
+    }
+    .br-flag {
+        width: 200px;
+        height: 140px;
+    }
+    .fortaleza {
+        width: 300px;
+        height: 163px;
+    }
+    .nintendo {
+        width: 250px;
+        height: 258px;
+    }
+    .pokemon{
+        width: 250px;
+        height: 167px;
+    }
+    .c-lang{
+        width: 250px;
+        height: 250px;
+    }
+    .javascript{
+        width: 250px;
+        height: 156px;
+    }
+    .anime-1{
+        width: 250px;
+        height: 367px;
+    }
+    .anime-2{
+        width: 250px;
+        height: 357px;
+    }
+}
